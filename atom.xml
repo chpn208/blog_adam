@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://https://github.com/chpn208/blog_adm.git</id>
+    <id>https://chpn208.github.io/blog_adm/</id>
     <title>大浪淘沙1</title>
-    <updated>2020-05-07T12:12:16.921Z</updated>
+    <updated>2020-05-07T12:14:20.580Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://https://github.com/chpn208/blog_adm.git"/>
-    <link rel="self" href="https://https://github.com/chpn208/blog_adm.git/atom.xml"/>
+    <link rel="alternate" href="https://chpn208.github.io/blog_adm/"/>
+    <link rel="self" href="https://chpn208.github.io/blog_adm/atom.xml"/>
     <subtitle>宠辱不惊 看庭前花开花落&lt;br&gt;
 去留无意 望天上云卷云舒</subtitle>
-    <logo>https://https://github.com/chpn208/blog_adm.git/images/avatar.png</logo>
-    <icon>https://https://github.com/chpn208/blog_adm.git/favicon.ico</icon>
+    <logo>https://chpn208.github.io/blog_adm/images/avatar.png</logo>
+    <icon>https://chpn208.github.io/blog_adm/favicon.ico</icon>
     <rights>All rights reserved 2020, 大浪淘沙1</rights>
     <entry>
         <title type="html"><![CDATA[这是第二个测试的文章]]></title>
-        <id>https://https://github.com/chpn208/blog_adm.git/post/eee/</id>
-        <link href="https://https://github.com/chpn208/blog_adm.git/post/eee/">
+        <id>https://chpn208.github.io/blog_adm/post/eee/</id>
+        <link href="https://chpn208.github.io/blog_adm/post/eee/">
         </link>
         <updated>2020-05-07T11:55:31.000Z</updated>
         <content type="html"><![CDATA[<p>adfafasfasfas</p>
@@ -22,8 +22,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[这是一个测试的文章 ]]></title>
-        <id>https://https://github.com/chpn208/blog_adm.git/post/zhe-shi-yi-ge-ce-shi-de-wen-zhang/</id>
-        <link href="https://https://github.com/chpn208/blog_adm.git/post/zhe-shi-yi-ge-ce-shi-de-wen-zhang/">
+        <id>https://chpn208.github.io/blog_adm/post/zhe-shi-yi-ge-ce-shi-de-wen-zhang/</id>
+        <link href="https://chpn208.github.io/blog_adm/post/zhe-shi-yi-ge-ce-shi-de-wen-zhang/">
         </link>
         <updated>2020-05-07T11:53:05.000Z</updated>
         <content type="html"><![CDATA[<p>这是一个测试的文章</p>
@@ -31,8 +31,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://https://github.com/chpn208/blog_adm.git/post/hello-gridea/</id>
-        <link href="https://https://github.com/chpn208/blog_adm.git/post/hello-gridea/">
+        <id>https://chpn208.github.io/blog_adm/post/hello-gridea/</id>
+        <link href="https://chpn208.github.io/blog_adm/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
