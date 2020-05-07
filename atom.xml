@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chpn208.github.io/blog_adm/</id>
     <title>大浪淘沙</title>
-    <updated>2020-05-07T13:20:33.772Z</updated>
+    <updated>2020-05-07T13:23:22.383Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chpn208.github.io/blog_adm/"/>
     <link rel="self" href="https://chpn208.github.io/blog_adm/atom.xml"/>
@@ -17,7 +17,23 @@
         <link href="https://chpn208.github.io/blog_adm/post/she-ji-mo-shi-qi-da-yuan-ze/">
         </link>
         <updated>2020-05-07T13:04:48.000Z</updated>
-        <content type="html"><![CDATA[<p>afafsa</p>
+        <content type="html"><![CDATA[<h1 id="设计模式七大原则">设计模式七大原则</h1>
+<p>设计模式体现了代码的耦合性，内聚性以及可维护性，可扩展性，灵活性</p>
+<ol>
+<li>代码重用性（即：相同功能的代码，不用多次编写）</li>
+<li>可读性（即：编程规范性，便于其他程序员的阅读和理解）</li>
+<li>可扩展性（即：当需要增加新的功能后，非常的方便，称为可维护）</li>
+<li>可靠性（即：当我们增加新的功能后，对原来的功能没有影响）</li>
+<li>使程序呈现 <strong>高内聚，低耦合</strong>的特性</li>
+</ol>
+<h2 id="一-单一职责原则single-responibi">一、单一职责原则（Single responibi）</h2>
+<p>单一职责原则注意事项和细节</p>
+<ol>
+<li>降低类的复杂度，一个类只负责一项职责</li>
+<li>提高类的可读性，可维护性</li>
+<li>降低变更引起的风险</li>
+<li>通常性况下，应当遵守单一职责原则，只有逻辑足够简单，才可以在方法级违反单一职责原则</li>
+</ol>
 ]]></content>
     </entry>
 </feed>
