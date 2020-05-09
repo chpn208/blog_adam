@@ -34,7 +34,7 @@
 						<div class="logo">
 							<a href="https://chpn208.github.io/blog_adm/">
 								<img class="logo"
-									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1588994478774"
+									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1589033992759"
 									alt="">
 							</a>
 						</div>
@@ -73,7 +73,7 @@
 							<div class="search-lightbox">
 								<div class="search-body">
 
-									<form id="gridea-search-form" data-update="1588994478774" action="/search/" class="search-form">
+									<form id="gridea-search-form" data-update="1589033992759" action="/search/" class="search-form">
 										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
 										<button type="submit" class="submit" aria-label="Submit">
 											<i class="fa fa-search" aria-hidden="true"></i>
@@ -201,6 +201,128 @@ class Sing{
 <p>在Controller层，UserController类对Service层 IService的依赖，也许并不需要update与del方法，故而，在这种设计上违法了接口隔离原则</p>
 <p>改进<img src="https://chpn208.github.io/blog_adm//post-images/1588994301104.png" alt="" loading="lazy"></p>
 <p>对于抽象类的实现而言，自己去处理要实现的逻辑 valiad(),process() 参数较验与处理，抽象类只负责暴露方法process()给其调用者，从而达到接口隔离的效果（PS:以及单一职责原则）</p>
+<h2 id="三-依赖倒转原则">三、依赖倒转原则</h2>
+<ol>
+<li>高层的模块不应该依赖低层模块，二者者应该依赖其抽象</li>
+<li>抽象不应该依赖细节，细节应该依赖抽象</li>
+<li>依赖倒转的中心思想是面向接口编程</li>
+<li>依赖倒转原则是基于这样的设计理念：相对于细节的多变性，抽象的东西要稳定的多。以抽象为基础搭建的架构比以细节为基础的架构要稳定的多。在java中，抽象指的是接口或抽象类，细节就是具体的实现类</li>
+<li>使用接口或抽象类的目的是制定好规范，而不涉及任何具体的操作，把展现细节的任务交给他们的实现类去完成</li>
+</ol>
+<p><u><font color='red'>总结：依赖高层的接口，不依赖底层的细节</font></u></p>
+<pre><code class="language-java">public class MainClass {
+    public static void main(String[] args) {
+        IService&lt;User&gt; iService = new UserServiceImpl();
+        iService.add(new User());
+    }
+}
+
+interface IService&lt;T&gt;{
+    void add(T t);
+}
+
+class UserServiceImpl implements IService&lt;User&gt;{
+    @Override
+    public void add(User user) {
+        System.out.println(&quot;save user:&quot;+user.toString());
+    }
+}
+
+class User{
+}
+
+</code></pre>
+<p>依赖倒转原则的注意事项和细节</p>
+<ol>
+<li>低层模块尽量都要有抽象类或接口，或者两者都有，程序稳定性更好</li>
+<li>变量的声明类型尽量是抽象类或接口，这样我们的变量引用和实际对象间，就存在一个缓冲层，利于程序扩展和优化</li>
+<li>继承时遵循<font color='red'>里氏替换原则</font></li>
+</ol>
+<h2 id="四-里氏替换原则">四、里氏替换原则</h2>
+<p><strong>OO中的继承性思考和说明</strong></p>
+<ol>
+<li>继承包含这样一层含义：父类中凡是已经实现好的方法，实际上是在设定规范和契约，虽然它不强制要求所有的子类必须遵循这些契约，但是如果子类对这些已经实现方法任意修改，就会对整个继承体系造成破坏</li>
+<li>继承在给程序设计带来便利的同时，也带来的弊端。比如使用继承会给程序带来侵入性，程序的可移植性降低，增加对象间的耦合性，如果一个类被其他的类所继承，则当这个类需要修改时，必须考虑到所有的子类，并且父类修改后，所有涉及到子类的功能都有可能产生故障</li>
+<li><font color='red'>在编程中，如何正确的使用继承？-&gt; 里低替换原则</font></li>
+</ol>
+<p><strong>基本介绍</strong></p>
+<ol>
+<li>如果对每个类型为T1的对象o1，都有类型为T2的对象o2，使得以T1定义的所有程序P在所有的对象o1都代换成o2时，程序P的行为没有发生变化，那么类型T2是类型T1的子类型。换句话说，<font color='red'>所有引用基类的地方必须能透明地使用其子类的对象</font>。</li>
+<li>在使用继承时，遵循里氏替换原则，<font color='red'>在子类中尽量不要重写父类的方法</font></li>
+<li>里氏替换原则告诉我们，继承实际上让两个类耦合性增强了，在适当的情况下，可以通过聚合，组合，依赖来解决问题</li>
+</ol>
+<h2 id="五-开闭原则">五、开闭原则</h2>
+<ol>
+<li>开闭原则（Open Closed Principle）是编程中最基础、最重要的设计原则</li>
+<li>一个软件实体如类，模块和函数应该<font color='red'>对扩展开放（对提供方），对修改关闭（对使用方）</font>。用抽象构建框架，用实现扩展细节</li>
+<li>当软件需要变化时，尽量通过扩展软件实体的行为来实现变化，而不是通过修改已有的代码来实现变化</li>
+<li>编程中遵循其它原则，以及使用设计模式的目的就是遵循<strong>开闭原则</strong></li>
+</ol>
+<pre><code class="language-java">class GraphicEditor{
+    public void drawShape(Sharp s){
+        if (s.mType == 1){
+            System.out.println(&quot;矩形&quot;);
+        }else if (s.mType == 2){
+            System.out.println(&quot;圆形&quot;);
+        }
+    }
+}
+
+class Sharp{
+    int mType;
+}
+
+class Rectangle extends Sharp{
+    Rectangle(){
+        super.mType = 1;
+    }
+}
+class Circle extends Sharp{
+    Circle(){
+        super.mType = 2;
+    }
+}
+</code></pre>
+<p><img src="https://chpn208.github.io/blog_adm//post-images/1589033525592.png" alt="" loading="lazy"><br>
+问题分析：</p>
+<p>如果有新的Sharp添加进来的时候，GraphicEditor.drawShape要添加类型判断，这样违反了开闭原则，<font color='red'>对扩展开放（对提供方），对修改关闭（对使用方）</font>。</p>
+<p>改进：</p>
+<pre><code class="language-java">class GraphicEditor{
+    public void drawShape(Sharp s){
+       s.draw();
+    }
+}
+
+interface Sharp{
+    void draw();
+}
+
+class Rectangle implements Sharp{
+
+    @Override
+    public void draw() {
+        System.out.println(&quot;矩形&quot;);
+    }
+}
+class Circle implements Sharp{
+    @Override
+    public void draw() {
+        System.out.println(&quot;圆形&quot;);
+    }
+}
+</code></pre>
+<p>说明：将Sharp抽象成一个接口，定义一个draw方法，交由其子类去实现，在调用方只负责调用该方法。从而，在添加新的Sharp时，只要添加Sharp的实现就行了（扩展）。对于调用方，无需要改动（修改）。</p>
+<p><font color='red'>对扩展开放（对提供方），对修改关闭（对调用方）</font><br>
+<img src="https://chpn208.github.io/blog_adm//post-images/1589033538759.png" alt="" loading="lazy"></p>
+<h2 id="六-迪米特法则">六、迪米特法则</h2>
+<p>基本介绍</p>
+<ol>
+<li>一个对象应该对其他对象保持最少的了解</li>
+<li>类与类关系越密切，耦合度越大</li>
+<li>迪米特法则（Demeter Principle）又叫<strong>最少知道原则</strong>，即一个类对自己依赖的类知道的越少越好。也就是说，对于被依赖的类不管多么复杂，都尽量将逻辑封装在类的内部。对外除了提供的public方法，不对外泄露任何信息</li>
+<li>迪米特法则还有个更简单的定义：只与直接的朋友通信</li>
+<li><font color='red'>直接的朋友</font>：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多：依赖，关联，组合，聚合等。其中，我们称出<strong>现成员变量，方法参数，方法返回值中的类为直接朋友</strong>，而<strong>出现在局部变量中的类不是直接朋友</strong>。也就是说，<font color='red'>陌生的类最好不要以局部变量的形式出现在类的内部</font>。</li>
+</ol>
 
                           </div>
                         </div>
@@ -256,6 +378,10 @@ class Sing{
 <ul>
 <li><a href="#%E4%B8%80-%E5%8D%95%E4%B8%80%E8%81%8C%E8%B4%A3%E5%8E%9F%E5%88%99single-responibi">一、单一职责原则（Single responibi）</a></li>
 <li><a href="#%E4%BA%8C-%E6%8E%A5%E5%8F%A3%E9%9A%94%E7%A6%BB%E5%8E%9F%E5%88%99">二、接口隔离原则</a></li>
+<li><a href="#%E4%B8%89-%E4%BE%9D%E8%B5%96%E5%80%92%E8%BD%AC%E5%8E%9F%E5%88%99">三、依赖倒转原则</a></li>
+<li><a href="#%E5%9B%9B-%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8D%A2%E5%8E%9F%E5%88%99">四、里氏替换原则</a></li>
+<li><a href="#%E4%BA%94-%E5%BC%80%E9%97%AD%E5%8E%9F%E5%88%99">五、开闭原则</a></li>
+<li><a href="#%E5%85%AD-%E8%BF%AA%E7%B1%B3%E7%89%B9%E6%B3%95%E5%88%99">六、迪米特法则</a></li>
 </ul>
 </li>
 </ul>
