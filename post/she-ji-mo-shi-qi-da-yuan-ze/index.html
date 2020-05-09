@@ -34,7 +34,7 @@
 						<div class="logo">
 							<a href="https://chpn208.github.io/blog_adm/">
 								<img class="logo"
-									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1588992968895"
+									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1588994478774"
 									alt="">
 							</a>
 						</div>
@@ -73,7 +73,7 @@
 							<div class="search-lightbox">
 								<div class="search-body">
 
-									<form id="gridea-search-form" data-update="1588992968895" action="/search/" class="search-form">
+									<form id="gridea-search-form" data-update="1588994478774" action="/search/" class="search-form">
 										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
 										<button type="submit" class="submit" aria-label="Submit">
 											<i class="fa fa-search" aria-hidden="true"></i>
@@ -194,6 +194,13 @@ class Sing{
 </li>
 <li>改进 <img src="https://chpn208.github.io/blog_adm//post-images/1588992966018.png" alt="" loading="lazy"></li>
 </ol>
+<p>对于类B而言，对于它的调用者来说，只需要B的最小接口方法的实现，所以，没必要去实现不被调用的 operatoion4,operation5。</p>
+<p>关于controller、service、层的一些思考</p>
+<p>对于一个项目而言，会有分层的思想，controller、service、dao。<br>
+<img src="https://chpn208.github.io/blog_adm//post-images/1588993618399.png" alt="" loading="lazy"></p>
+<p>在Controller层，UserController类对Service层 IService的依赖，也许并不需要update与del方法，故而，在这种设计上违法了接口隔离原则</p>
+<p>改进<img src="https://chpn208.github.io/blog_adm//post-images/1588994301104.png" alt="" loading="lazy"></p>
+<p>对于抽象类的实现而言，自己去处理要实现的逻辑 valiad(),process() 参数较验与处理，抽象类只负责暴露方法process()给其调用者，从而达到接口隔离的效果（PS:以及单一职责原则）</p>
 
                           </div>
                         </div>
