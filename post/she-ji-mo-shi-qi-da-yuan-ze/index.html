@@ -34,7 +34,7 @@
 						<div class="logo">
 							<a href="https://chpn208.github.io/blog_adm/">
 								<img class="logo"
-									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1588992039894"
+									src="https://chpn208.github.io/blog_adm//media/images/site_avatar.png?v=1588992968895"
 									alt="">
 							</a>
 						</div>
@@ -73,7 +73,7 @@
 							<div class="search-lightbox">
 								<div class="search-body">
 
-									<form id="gridea-search-form" data-update="1588992039894" action="/search/" class="search-form">
+									<form id="gridea-search-form" data-update="1588992968895" action="/search/" class="search-form">
 										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
 										<button type="submit" class="submit" aria-label="Submit">
 											<i class="fa fa-search" aria-hidden="true"></i>
@@ -185,8 +185,14 @@ class Sing{
 <h2 id="二-接口隔离原则">二、接口隔离原则</h2>
 <p>基本介绍</p>
 <ol>
-<li>客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立 在最小的接口上11</li>
-<li>图例<img src="https://chpn208.github.io/blog_adm//post-images/1588991718171.png" alt="" loading="lazy"></li>
+<li>客户端不应该依赖它不需要的接口，即一个类对另一个类的依赖应该建立 在最小的接口上</li>
+<li>图例<img src="https://chpn208.github.io/blog_adm//post-images/1588991718171.png" alt="" loading="lazy">
+<ol>
+<li>类A通过接口依赖类B,类C通过接口依赖类D，如果接口Interface1对于类A和类C来说不是最小接口那么类B和类D必须去实现他们不需要的方法</li>
+<li>按接口隔离原则，应当将接口拆分为独立的风个接口，类A和类C分别与他们需要的接口建立依赖关系。也就是采用接口隔离原则。</li>
+</ol>
+</li>
+<li>改进 <img src="https://chpn208.github.io/blog_adm//post-images/1588992966018.png" alt="" loading="lazy"></li>
 </ol>
 
                           </div>
