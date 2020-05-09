@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://chpn208.github.io/blog_adm/</id>
     <title>大浪淘沙</title>
-    <updated>2020-05-09T14:22:14.481Z</updated>
+    <updated>2020-05-09T14:38:53.414Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://chpn208.github.io/blog_adm/"/>
     <link rel="self" href="https://chpn208.github.io/blog_adm/atom.xml"/>
@@ -17,7 +17,7 @@
         <link href="https://chpn208.github.io/blog_adm/post/yuan-xing-mo-shi/">
         </link>
         <updated>2020-05-07T13:55:25.000Z</updated>
-        <content type="html"><![CDATA[<p>原型模式</p>
+        <content type="html"><![CDATA[<p>原型模式<img src="https://chpn208.github.io/blog_adm//post-images/1589034391644.png" alt="" loading="lazy"></p>
 ]]></content>
     </entry>
     <entry>
@@ -232,6 +232,7 @@ class Circle implements Sharp{
 <li>迪米特法则还有个更简单的定义：只与直接的朋友通信</li>
 <li><font color='red'>直接的朋友</font>：每个对象都会与其他对象有耦合关系，只要两个对象之间有耦合关系，我们就说这两个对象之间是朋友关系。耦合的方式很多：依赖，关联，组合，聚合等。其中，我们称出<strong>现成员变量，方法参数，方法返回值中的类为直接朋友</strong>，而<strong>出现在局部变量中的类不是直接朋友</strong>。也就是说，<font color='red'>陌生的类最好不要以局部变量的形式出现在类的内部</font>。</li>
 </ol>
+<h2 id="七-合成复用原则">七、合成复用原则</h2>
 ]]></content>
     </entry>
 </feed>
